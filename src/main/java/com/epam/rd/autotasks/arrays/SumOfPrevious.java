@@ -12,8 +12,23 @@ public class SumOfPrevious {
 
     public static boolean[] getSumCheckArray(int[] array){
 
-        //put your code here
+        boolean[] result = new boolean[array.length];
 
-        throw new UnsupportedOperationException();
-    }
+        result[0] = false;
+        result[1] = false;
+
+        try {
+            for(int i = 2; i < array.length; i++) {
+                int current = array[i];
+                int previous = array[i - 1];
+                int previous2 = array[i - 2];
+
+                result[i] = (current == previous + previous2);
+            }
+            return result;
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Invalid operation.");
+        }
+    return result;
+}
 }
